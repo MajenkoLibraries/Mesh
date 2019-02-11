@@ -60,7 +60,7 @@ class nRF24L01 : public L2 {
     private:
         static int isrHandlerCounter;
 
-        DSPI *_spi;
+        DGSPI *_spi;
         int _csn;
         int _ce;
         int _intr;
@@ -78,7 +78,7 @@ class nRF24L01 : public L2 {
         void selectTX();
 
     public:
-        nRF24L01(DSPI &spi, int csn, int ce, int intr);
+        nRF24L01(DGSPI &spi, int csn, int ce, int intr);
         void begin(uint8_t addr0, uint8_t addr1, uint8_t addr2, uint8_t addr3, uint8_t addr4, uint8_t chan, uint8_t width = DEFAULT_PIPE_WIDTH);
         void enablePipe(int pipe, uint8_t *addr, boolean aa);
         void enablePower();

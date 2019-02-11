@@ -26,7 +26,7 @@ void nRF24L01_isrHandler7() { isrObject7->isrHandler(); }
 
 int nRF24L01::isrHandlerCounter = 0;
 
-nRF24L01::nRF24L01(DSPI &spi, int csn, int ce, int intr) {
+nRF24L01::nRF24L01(DGSPI &spi, int csn, int ce, int intr) {
     _spi = &spi;
     _csn = csn;
     _ce = ce;
